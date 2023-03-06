@@ -14,7 +14,11 @@ class ProductionFactory extends Factory
     public function definition()
     {
         return [
-            
+            'programing_date' => $this->faker->date('Y-m-d'),
+            'execute_date' => $this->faker->date('Y-m-d'),
+            'week_number' => $this->faker->numberBetween($min = 1, $max = 52),
+            'feed_time' => $this->faker->time($format = 'H:i:s'),
+            'break_time' => $this->faker->time($format = 'H:i:s'),
         ];
     }
 }
