@@ -18,8 +18,8 @@ class Productions extends Migration
             $table->date('programing_date');
             $table->date('execute_day');
             $table->integer('week_number');
-            $table->dateTime('feed_time');
-            $table->dateTime('break_time');
+            $table->time('feed_time');
+            $table->time('break_time');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('turn_id');
