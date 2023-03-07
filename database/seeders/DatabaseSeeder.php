@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LocationSeeder::class);
         $this->call(TurnSeeder::class);
         $this->call(ProductionSeeder::class);
+        $this->call(WorkSeeder::class);
+        $this->call(TypeProductSeeder::class);
     }
 }

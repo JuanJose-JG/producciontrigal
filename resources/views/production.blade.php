@@ -5,7 +5,7 @@
 @section('content')
 <div class="m-4 d-flex">
     <div class="text-center m-2">
-        <img src="..\descargar.png" class="rounded-3">
+        <img src="..\descargar.png" class="rounded-3" style="width: 100%;">
     </div>
 
     <div class="w-100">
@@ -15,7 +15,7 @@
                 
                 <div class="col-3 p-1">
                     <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">CÓDIGO DE PRODUCCIÓN</h6>
-                    <input type="text" class="form-control text-center" disabled readonly>
+                    <input type="text" class="form-control text-center" value="{{$productions->id+1}}" disabled readonly>
                 </div>
         
                 <div class="col-3 p-1">
@@ -41,29 +41,67 @@
                 <div class="col-3">
                     <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">PRODUCTO</h6>
                     <select class="form-select" size="5">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                        <option value="5">Five</option>
+                        @foreach ($products as $product)
+                            <option value="{{$loop->iteration}}">{{$product->name}}</option> 
+                        @endforeach
                     </select>
                 </div>
                 
                 <div class="col-3">
                     <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">TIPO ASTER</h6>
                     <select class="form-select" size="5">
-                        <option value="1">PURPLE</option>
-                        <option value="2">WHITE</option>
+                        @foreach ($typeProducts as $typeProduct)
+                            <option value="{{$loop->iteration}}">{{$typeProduct->name}}</option>
+                        @endforeach
                     </select>
                 </div>
 
                 <div class="col-6 form-check">
                     <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">LABOR</h6>
-                    <input class="form-check-input m-1" type="checkbox">
-                    <label class="form-check-label float-start">
-                        Default checkbox
-                    </label>
+                    @foreach ($works as $work)
+                        <input class="form-check-input m-1" type="checkbox">
+                        <label class="form-check-label float-start">
+                            {{$work->name}}
+                        </label> <br>
+                    @endforeach
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="m-4">
+    <div class="bg-white border border-dark rounded-3 m-2">
+        <h6 style="background-color: #E8B800;" class="p-2 d-inline rounded-3 border border-dark m-3">PRODUCCIÓN</h6>
+        <div class="row m-3 text-center">
+            <div class="col-1">
+                <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">SEDE</h6>
+                <input type="text" class="form-control text-center">
+            </div>
+
+            <div class="col-1">
+                <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">BLOQUE</h6>
+                <input type="text" class="form-control text-center">
+            </div>
+
+            <div class="col-1">
+                <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">CAMA</h6>
+                <input type="text" class="form-control text-center">
+            </div>
+
+            <div class="col-1">
+                <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">PERSONAS</h6>
+                <input type="text" class="form-control text-center">
+            </div>
+
+            <div class="col-3">
+                <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">HORA ALIMENTACIÓN</h6>
+                <input type="text" class="form-control text-center">
+            </div>
+
+            <div class="col-3">
+                <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">HORA PAUSA ACTIVA</h6>
+                <input type="text" class="form-control text-center">
             </div>
         </div>
     </div>
