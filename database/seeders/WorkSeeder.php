@@ -29,13 +29,13 @@ class WorkSeeder extends Seeder
 
         $work3 = new Work();
 
-        $work3->name = 'Evacuacion';
+        $work3->name = 'Evacuación';
         $work3->general_time = '00:30';
         $work3->save();
 
         $work4 = new Work();
 
-        $work4->name = 'Preparacion';
+        $work4->name = 'Preparación';
         $work4->general_time = '01:07';
         $work4->save();
     }

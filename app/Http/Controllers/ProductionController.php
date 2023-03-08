@@ -7,12 +7,14 @@ use App\Models\Production;
 use App\Models\Product;
 use App\Models\Work;
 use App\Models\TypeProduct;
+use App\Models\Location;
 
 class ProductionController extends Controller
 {
     public function create(){
-
-        $productions = Production::select('id')->orderBy('id', 'DESC')->first();
+        $productions = Production::select('id')
+                                    ->orderBy('id', 'DESC')
+                                    ->first();
 
         $products = Product::all();
 
@@ -20,7 +22,9 @@ class ProductionController extends Controller
 
         $typeProducts = TypeProduct::all();
 
-        return view('production', compact('productions', 'products', 'works', 'typeProducts'));
+        $locations = Location::all();
+
+        return view('production', compact('productions', 'products', 'works', 'typeProducts', 'locations'));
     }
 
     public function store(Request $request){

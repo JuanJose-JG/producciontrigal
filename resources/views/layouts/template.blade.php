@@ -11,11 +11,12 @@
     <title>@yield('title')</title>
     <!-- styles -->
 </head>
-<body style="background-color: #D9D9D9;">
+<body style="background-color: #D9D9D9; font-family: Rockwell;">
     <!-- logo -->
     
     @yield('content')
     
     <!-- script -->
+    <script src="https://kit.fontawesome.com/e20b758080.js" crossorigin="anonymous"></script>
 </body>
 </html>

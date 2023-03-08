@@ -16,12 +16,12 @@ class ProductSeeder extends Seeder
     {
         $product = new Product();
 
-        $product->name = "Pompon";
+        $product->name = "Pompón";
         $product->save();
 
         $product2 = new Product();
 
-        $product2->name = "Micropompon";
+        $product2->name = "Micropompón";
         $product2->save();
 
         $product3 = new Product();

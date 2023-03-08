@@ -10,17 +10,17 @@
 
     <div class="w-100">
         <div class="text-center bg-white m-2 rounded-3 border border-dark">
-            <h6 style="background-color: #E8B800;" class="p-2 d-inline rounded-3 border border-dark">RANGO DE PRODUCCIÓN</h6>
+            <h6 style="background-color: #E8B800;" class="text-white p-2 d-inline rounded-3 border border-dark">RANGO DE PRODUCCIÓN</h6>
             <div class="text-center d-flex p-3">
                 
                 <div class="col-3 p-1">
-                    <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">CÓDIGO DE PRODUCCIÓN</h6>
+                    <h6 style="background-color: #631D29;" class="text-white p-1 rounded-3">CÓDIGO DE PRODUCCIÓN</h6>
                     <input type="text" class="form-control text-center" value="{{$productions->id+1}}" disabled readonly>
                 </div>
         
                 <div class="col-3 p-1">
                     <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">FECHA ACTUAL</h6>
-                    <input type="text" class="form-control text-center" value="{{date('d-m-Y')}}" disabled readonly>
+                    <input type="text" class="form-control text-center" value="{{date('Y-m-d')}}" disabled readonly>
                 </div>
         
                 <div class="col-3 p-1">
@@ -36,7 +36,7 @@
         </div>
 
         <div class="text-center bg-white m-2 rounded-3 border border-dark mt-4">
-            <h6 style="background-color: #E8B800;" class="p-2 d-inline rounded-3 border border-dark">PROGRAMACIÓN POR GRUPO</h6>
+            <h6 style="background-color: #E8B800;" class="text-white p-2 d-inline rounded-3 border border-dark">PROGRAMACIÓN POR GRUPO</h6>
             <div class="row m-3">
                 <div class="col-3">
                     <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">PRODUCTO</h6>
@@ -54,6 +54,7 @@
                             <option value="{{$loop->iteration}}">{{$typeProduct->name}}</option>
                         @endforeach
                     </select>
+                    
                 </div>
 
                 <div class="col-6 form-check">
@@ -72,11 +73,16 @@
 
 <div class="m-4">
     <div class="bg-white border border-dark rounded-3 m-2">
-        <h6 style="background-color: #E8B800;" class="p-2 d-inline rounded-3 border border-dark m-3">PRODUCCIÓN</h6>
+        <h6 style="background-color: #E8B800;" class="text-white p-2 d-inline rounded-3 border border-dark m-3">PRODUCCIÓN</h6>
         <div class="row m-3 text-center">
-            <div class="col-1">
+            <div class="col-2">
                 <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">SEDE</h6>
-                <input type="text" class="form-control text-center">
+                <select class="form-select" aria-label="Default select example">
+                    <option disabled selected>Selecciona...</option>
+                    @foreach ($locations as $location)
+                        <option value="{{$loop->iteration}}">{{$location->name}}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="col-1">
@@ -91,18 +97,26 @@
 
             <div class="col-1">
                 <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">PERSONAS</h6>
-                <input type="text" class="form-control text-center">
+                <input type="number" inputmode="numeric" class="form-control text-center">
             </div>
 
             <div class="col-3">
+                <i class="fa-solid fa-file-circle-plus fa-3x float-start"></i>
+            </div>
+
+            <div class="col-2">
                 <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">HORA ALIMENTACIÓN</h6>
-                <input type="text" class="form-control text-center">
+                <input type="time" class="form-control text-center">
             </div>
 
-            <div class="col-3">
+            <div class="col-2">
                 <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">HORA PAUSA ACTIVA</h6>
-                <input type="text" class="form-control text-center">
+                <input type="time" class="form-control text-center">
             </div>
+        </div>
+
+        <div>
+
         </div>
     </div>
 </div>
