@@ -5,7 +5,7 @@
 @section('content')
 <div class="m-4 d-flex">
     <div class="text-center m-2">
-        <img src="..\descargar.png" class="rounded-3" style="width: 100%;">
+        <a href="{{route('index')}}"><img src="{{asset('storage/logo2.png')}}" class="rounded-3"></a>
     </div>
 
     <div class="w-100">
