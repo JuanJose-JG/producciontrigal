@@ -95,12 +95,12 @@
                 <input type="text" class="form-control text-center">
             </div>
 
-            <div class="col-1">
+            <div class="col-2">
                 <h6 style="background-color: #1D3163;" class="text-white p-1 rounded-3">PERSONAS</h6>
                 <input type="number" inputmode="numeric" class="form-control text-center">
             </div>
 
-            <div class="col-3">
+            <div class="col-2">
                 <i class="fa-solid fa-file-circle-plus fa-3x float-start"></i>
             </div>
 
